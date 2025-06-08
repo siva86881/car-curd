@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car CRUD App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center text-success mb-4">Car CRUD Application</h1>
+
+    <!-- Search -->
+    <input placeholder="Search brand .." class="form-control mb-3" id="SearchCar" />
+
+    <!-- Add Car Button -->
+    <button class="btn btn-primary mb-3" id="addNewCarBtn">Add New Car</button>
+
+    <!-- Add / Edit Car Form -->
+    <div id="carForm" class="mb-4" style="display: none;">
+      <input type="hidden" id="carId" />
+      <input type="text" placeholder="Brand" class="form-control mb-2" id="carBrand" />
+      <input type="text" placeholder="Image URL" class="form-control mb-2" id="carImage" />
+      <input type="number" placeholder="Price" class="form-control mb-2" id="carPrice" />
+      <input type="number" placeholder="Quantity" class="form-control mb-2" id="carQty" />
+      <button class="btn btn-success" id="saveCarBtn">Save</button>
+      <button class="btn btn-secondary" onclick="document.getElementById('carForm').style.display='none'">Cancel</button>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-hover text-center">
+      <thead>
+        <tr class="text-uppercase">
+          <th>S.No</th>
+          <th>Brand</th>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="root"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4"></td>
+          <td>Grand Total</td>
+          <td id="totalAmt"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+<script src="scrit.js"></script>
+</body>
+</html>
